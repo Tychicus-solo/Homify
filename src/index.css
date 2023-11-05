@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #e5e5e5;
+  font-family: "Poppins", sans-serif;
+}
+
+.bg-conic-gradient {
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    rgba(140, 72, 8, 0.42) -36.32deg,
+    #7c430e 34.86deg,
+    rgba(140, 72, 8, 0.42) 323.68deg,
+    #7c430e 394.86deg
+  );
+}

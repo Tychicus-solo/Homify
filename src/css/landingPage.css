@@ -1,0 +1,410 @@
+.card-container .card {
+  width: 25%;
+  cursor: pointer;
+  min-height: 100%;
+  transition: ease-in-out 1.25s;
+  overflow: hidden;
+  position: relative;
+}
+.card-container .card:hover {
+  width: 60%;
+}
+.card-container .card:first-child {
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      #754600 100%
+    ),
+    url("../assets/LandingpageImgs/homes-image.jpeg");
+  mix-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+}
+.card-container .card:nth-child(2) {
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      #1d9067 100%
+    ),
+    url("../assets/LandingpageImgs/properties-image.jpeg");
+  mix-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+}
+.card-container .card:nth-child(3) {
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      #a41616 160%
+    ),
+    url("../assets/LandingpageImgs/landbanking-image.jpeg");
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: multiply;
+}
+.card-container .card:nth-child(4) {
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      #6c0662 100%
+    ),
+    url("../assets/LandingpageImgs/homevest-image.jpeg");
+  mix-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+}
+.card-container .card .caption {
+  color: #fff;
+  position: absolute;
+  bottom: 100px;
+  width: 30vw;
+  transition: all 1s;
+}
+
+.card-container .card .caption h2 {
+  margin-bottom: 20px;
+  font-size: 27px;
+  transition: ease-in-out 1s;
+  padding-left: 30%;
+  font-weight: 400;
+}
+
+/* .container .card .caption p {
+  font-size: 16px;
+  line-height: 1.5;
+} */
+
+.card-container .card .caption a.button {
+  background: #fff;
+  padding: 15px 30px;
+  margin-top: 50px;
+  border-radius: 8px;
+  align-self: flex-start;
+  border: none !important;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
+}
+
+.card-container .card .caption .description {
+  position: absolute;
+  bottom: -20vw;
+  padding-left: 14%;
+  height: 10vw;
+  transition: ease-in-out 1s;
+}
+
+.card-container:hover > .card:not(:hover) {
+  filter: grayscale(100%);
+}
+
+.card-container:hover > .card:not(:hover) .caption h2 {
+  padding-left: 15%;
+  opacity: 0.4;
+}
+
+.card-container .card:hover .caption {
+  bottom: 40%;
+}
+
+.card-container .card:hover .caption .description {
+  bottom: -12vw;
+}
+
+.card-container .card:hover h2 {
+  padding-left: 14%;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .card-container .card .caption {
+    color: #fff;
+    position: relative;
+    margin-top: 60%;
+    width: 100%;
+    transition: none;
+  }
+
+  .card-container .card .caption h2 {
+    margin-bottom: 10px;
+    font-size: 27px;
+    transition: none;
+    padding-left: 0%;
+    font-weight: 400;
+    opacity: 1;
+  }
+
+  .card-container .card .caption p {
+    font-size: 16px;
+    padding-left: 0%;
+    line-height: 1.5;
+  }
+  .card-container .card .caption .description {
+    position: relative;
+    bottom: 0;
+    padding-left: 0%;
+
+    /* padding-left: 14%; */
+    /* height: 10vw; */
+    transition: none;
+  }
+
+  .card-container:hover > .card:not(:hover) {
+    filter: grayscale(100%);
+  }
+
+  .card-container:hover > .card:not(:hover) .caption h2 {
+    opacity: 1;
+    padding-left: 0%;
+  }
+
+  .card-container .card:hover .caption {
+    bottom: 0;
+    padding-left: 0%;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    height: 800px !important;
+    width: 100vw;
+  }
+
+  .card-container .card {
+    display: flex;
+    width: 100%;
+    transition: none;
+    overflow-y: auto;
+    height: 100%;
+    padding: 15px;
+    /* height: 100%; */
+  }
+
+  .card-container .card:hover {
+    width: 100%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .card-container .card .caption {
+    color: #fff;
+    position: relative;
+    width: 60vw;
+    bottom: 0;
+    margin-top: 30%;
+    transition: all 1s;
+  }
+
+  .card-container .card .caption h2 {
+    padding-left: 14%;
+    text-align: start;
+    margin-bottom: 10px;
+    font-size: 27px;
+    transition: ease-in-out 1s;
+    font-weight: 400;
+  }
+
+  .card-container .card .caption p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .card-container .card .caption a.button {
+    background: #fff;
+    padding: 15px 30px;
+    margin-top: 10px;
+    border-radius: 8px;
+    align-self: flex-start;
+    border: none !important;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+  }
+
+  .card-container .card .caption .description {
+    position: relative;
+    bottom: 0;
+    padding-left: 14%;
+    /* height: 10vw; */
+    transition: ease-in-out 1s;
+  }
+
+  .card-container:hover > .card:not(:hover) {
+    filter: none;
+  }
+
+  .card-container:hover > .card:not(:hover) .caption h2 {
+    padding-left: 15%;
+    opacity: 1;
+  }
+
+  .card-container .card:hover .caption {
+    bottom: 0;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    width: 100vw;
+  }
+
+  .card-container .card {
+    width: 100%;
+  }
+
+  .card-container .card:hover {
+    width: 100%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .card-container .card {
+    width: 25%;
+  }
+
+  .card-container .card:hover {
+    width: 60%;
+  }
+
+  .card-container .card {
+    width: 25%;
+    min-height: 100%;
+    transition: ease-in-out 1.25s;
+    overflow: hidden;
+    position: relative;
+  }
+
+  header img.navbar {
+    display: none;
+  }
+
+  .card-container .card .overlay {
+    mix-blend-mode: multiply;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .card-container .card:first-child {
+    background-image: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        #754600 160%
+      ),
+      url("../assets//LandingpageImgs/homes-image.jpeg");
+    mix-blend-mode: multiply;
+    background-size: cover;
+    mix-blend-mode: multiply;
+    background-position: center;
+  }
+
+  .card-container .card:nth-child(2) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        #1d9067 160%
+      ),
+      url("../assets/LandingpageImgs/properties-image.jpeg");
+    mix-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-container .card:nth-child(3) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        #a41616 160%
+      ),
+      url("../assets/LandingpageImgs/landbanking-image.jpeg");
+    background-size: cover;
+    background-position: center;
+    mix-blend-mode: multiply;
+  }
+
+  .card-container .card:nth-child(4) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        #6c0662 180%
+      ),
+      url("../assets/LandingpageImgs/homevest-image.jpeg");
+    background-size: cover;
+    background-position: center;
+    mix-blend-mode: multiply;
+  }
+
+  .card-container .card .caption {
+    color: #fff;
+    position: absolute;
+    bottom: 80px;
+    width: 30vw;
+    transition: all 1s;
+  }
+
+  .card-container .card .caption h2 {
+    margin-bottom: 20px;
+    font-size: 27px;
+    transition: ease-in-out 1s;
+    padding-left: 18%;
+    font-weight: 400;
+  }
+
+  .card-container .card .caption p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .card-container .card .caption a.button {
+    background: #fff;
+    padding: 15px 30px;
+    margin-top: 50px;
+    border-radius: 8px;
+    align-self: flex-start;
+    border: none !important;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+  }
+
+  .card-container .card .caption .description {
+    position: absolute;
+    bottom: -20vw;
+    padding-left: 14%;
+    height: 10vw;
+    transition: ease-in-out 1s;
+  }
+
+  .card-container:hover > .card:not(:hover) {
+    filter: grayscale(100%);
+  }
+
+  .card-container:hover > .card:not(:hover) .caption h2 {
+    padding-left: 15%;
+    opacity: 0.4;
+  }
+
+  .card-container .card:hover .caption {
+    bottom: 50%;
+  }
+
+  .card-container .card:hover .caption .description {
+    bottom: -9.3vw;
+  }
+
+  .card-container .card:hover h2 {
+    padding-left: 14%;
+  }
+}
