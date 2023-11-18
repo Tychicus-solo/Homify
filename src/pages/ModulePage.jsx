@@ -1,24 +1,54 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import adminImg from "../assets/ModulepageImgs/admin.svg";
 import Homes from "../assets/ModulepageImgs/Homes.png";
 import HomesVest from "../assets/ModulepageImgs/Homesvest.png";
 import LandBanking from "../assets/ModulepageImgs/LandBanking.png";
+
 import Properties from "../assets/ModulepageImgs/Properties.png";
 import productInfoImg from "../assets/commonImgs/productInfoImg.svg";
+import { collection, getDocs, where, query } from "firebase/firestore";
+import { db, auth } from "../firebase";
 
 const LandingPage = () => {
   const [element, setElement] = useState(true);
   const [element2, setElement2] = useState(true);
+  const [userData, setUserData] = useState([]);
+  useEffect(() => {
+    const userUid = auth.currentUser.uid;
+    console.log(userUid);
+    const fetchData = async () => {
+      try {
+        const userQuery = query(
+          collection(db, "users"),
+          where("uid", "==", userUid)
+        );
+        const snapshot = await getDocs(userQuery);
+        const tempDataArray = [];
+        snapshot.forEach((doc) => {
+          tempDataArray.push(doc.data());
+        });
+        setUserData(tempDataArray);
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="w-screen max-h-screen ">
       <div className="flex flex-col items-center justify-center px-1 sm:px-0 pb-[5rem] sm:pb-[3rem] ">
         <div className="flex flex-col justify-items-center mt-20">
           <img src={adminImg} alt="adminImg" className="self-center" />
-          <h1 className="mt-4 font-normal text-[1.88rem] text-center leading-[2.4rem] tracking-[0.0em]">
-            Welcome back, Admin
-          </h1>
+          {userData.map((user, index) => (
+            <h1
+              className="mt-4 font-normal text-[1.88rem] text-center leading-[2.4rem] tracking-[0.0em]"
+              key={index}
+            >
+              Welcome back, {user.firstName}
+            </h1>
+          ))}
         </div>
         <div className="mt-20">
           <h1 className="text-center tracking-[-0.05em] font-normal text-[1.30rem] leading-[1.6rem] ">

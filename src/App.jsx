@@ -1,9 +1,11 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Toaster } from "sonner";
 
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import ForgotPassword from "./components/ForgotPassword";
+import ResetPassword from "./components/Resetpassword";
 import ModulePage from "./pages/ModulePage";
 import LandingPage from "./pages/LandingPage";
 import AboutUs from "./pages/AboutUs";
@@ -32,6 +34,7 @@ import Profile from "./pages/Profile";
 function App() {
   return (
     <div className="bg-[#e5e5e5] ">
+      <Toaster />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -39,6 +42,7 @@ function App() {
           <Route path="modulePage" element={<ModulePage />} />
           <Route path="signUp" element={<SignupForm />} />
           <Route path="forgotpassword" element={<ForgotPassword />} />
+          <Route path="resetpassword" element={<ResetPassword />} />
           <Route path="about-us" element={<AboutUs />} />
           <Route path="homes" element={<Homes />}>
             <Route index exact element={<HomesDashboard />} />
